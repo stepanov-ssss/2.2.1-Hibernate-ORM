@@ -30,6 +30,7 @@ public class MainApp {
         userService.add(user1);
         userService.add(user2);
         userService.add(user3);
+
         List<User> users = userService.listUsers();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
@@ -39,7 +40,12 @@ public class MainApp {
             System.out.println("------------");
         }
 
-        System.out.println("Find car" + userService.getUserByCar("BMW", 5));
+        try {
+            System.out.println("Find User By Car " + "\n"
+                    + userService.getUserByCar("BMW", 5));
+        } catch (Exception e) {
+            System.out.println("Пользователя не найдено");
+        }
         context.close();
     }
 }

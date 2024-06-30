@@ -17,7 +17,7 @@ public class Car {
     @Column(name = "id")
     private Long id;
 
-    public Car(){
+    public Car() {
     }
 
     public Car(String model, int series) {
